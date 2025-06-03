@@ -10,6 +10,7 @@
         html, body {
             margin: 0;
             padding: 0;
+            height: 100%;
             background-color: #1d292c;
             display: flex;
             flex-direction: column;
@@ -20,8 +21,8 @@
         }
 
         #playcanvas-wrapper {
-            width: 500px;
-            height: 500px;
+            width: 200px;
+            height: 200px;
             background: black;
             position: relative;
         }
@@ -54,8 +55,7 @@
 
     <button id="sendData">Отправить данные</button>
 
-    <script>
-        document.getElementById("sendData").addEventListener("click", function () {
+    <script>document.getElementById("sendData").addEventListener("click", function () {
             if (typeof window.sendCustomData === 'function') {
                 window.sendCustomData({
                     action: "updateScore",
@@ -72,7 +72,6 @@
             if (data.action === 'gameOver') {
                 console.log('Игра завершена. Счёт:', data.score);
             }
-        });
-    </script>
+        });</script>
 </body>
 </html>
