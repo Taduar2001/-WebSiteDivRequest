@@ -7,36 +7,21 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="manifest" href="manifest.json">
     <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            background-color: #1d292c;
+        body {
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #222;
             color: white;
-            font-family: Helvetica, Arial, sans-serif;
-        }
-
-        #playcanvas-wrapper {
-            width: 200px;
-            height: 200px;
-            background: black;
-            position: relative;
-        }
-
-        canvas {
-            width: 100% !important;
-            height: 100% !important;
-            display: block;
         }
 
         button {
             margin-top: 20px;
             padding: 10px 20px;
-            font-size: 14px;
+            font-size: 16px;
             cursor: pointer;
         }
     </style>
@@ -47,7 +32,7 @@
 </head>
 <body>
 
-    <div id="playcanvas-wrapper">
+    <div id="playcanvas-wrapper" style="width:300px; height:300px; position: relative;">
         <script src="__modules__.js?v=1.12"></script>
         <script src="__start__.js"></script>
         <script src="__loading__.js"></script>
