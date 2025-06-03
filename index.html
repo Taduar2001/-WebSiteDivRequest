@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unity Игра</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <style>
+        body {
+            margin: 0;
+            background-color: #222;
+            color: white;
+            font-family: sans-serif;
+            overflow: hidden;
+        }
+
+        #playcanvas-wrapper {
+            width: 100%;
+            height: calc(100vh - 80px);
+            position: relative;
+        }
+
+        #sendData {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 10;
+        }
+    </style>
+    <script src="playcanvas-stable.min.js"></script>
+    <script src="engine-patch.js"></script>
+    <script src="__settings__.js"></script>
+</head>
+<body>
+    <div id="playcanvas-wrapper">
+        <script src="__modules__.js?v=1.12"></script>
+        <script src="__start__.js"></script>
+        <script src="__loading__.js"></script>
+    </div>
+
+    <button id="sendData">Отправить данные</button>
+
+    <script>
+        // Пример взаимодействия с PlayCanvas-игрой (если у вас есть глобальные функции или обработчики)
+        document.getElementById("sendData").addEventListener("click", function () {
+            // Здесь можно реализовать вызов глобальной функции из PlayCanvas
+            if (typeof window.sendCustomData === 'function') {
+                window.sendCustomData({
+                    action: "updateScore",
+                    value: 150,
+                    name: "Alex"
+                });
+            } else {
+                console.warn("Функция sendCustomData не определена в игре.");
+            }
+        });
+
+        // Получение сообщений из PlayCanvas (если игра отправляет postMessage)
+        window.addEventListener('message', function (event) {
+            const data = event.data;
+            if (data.action === 'gameOver') {
+                console.log('Игра завершена. Счёт:', data.score);
+            }
+        });
+    </script>
+</body>
+</html>
