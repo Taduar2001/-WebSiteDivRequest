@@ -8,28 +8,29 @@
     <link rel="manifest" href="manifest.json">
     <style>
         body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
             margin: 0;
             background-color: #222;
             color: white;
             font-family: sans-serif;
-            overflow: hidden;
         }
 
         #playcanvas-wrapper {
-            width: 100%;
-            height: calc(100vh - 80px);
+            width: 800px;
+            height: 600px;
             position: relative;
+            background: black;
         }
 
-        #sendData {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
+        button {
+            margin-top: 20px;
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
-            z-index: 10;
         }
     </style>
     <script src="playcanvas-stable.min.js"></script>
@@ -46,9 +47,7 @@
     <button id="sendData">Отправить данные</button>
 
     <script>
-        // Пример взаимодействия с PlayCanvas-игрой (если у вас есть глобальные функции или обработчики)
         document.getElementById("sendData").addEventListener("click", function () {
-            // Здесь можно реализовать вызов глобальной функции из PlayCanvas
             if (typeof window.sendCustomData === 'function') {
                 window.sendCustomData({
                     action: "updateScore",
@@ -60,7 +59,6 @@
             }
         });
 
-        // Получение сообщений из PlayCanvas (если игра отправляет postMessage)
         window.addEventListener('message', function (event) {
             const data = event.data;
             if (data.action === 'gameOver') {
