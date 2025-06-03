@@ -1,24 +1,39 @@
-html, body {
+html {
     height: 100%;
+    background-color: #1d292c;
+}
+body {
     margin: 0;
     background-color: #1d292c;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#playcanvas-wrapper {
-    width: 300px;
-    height: 300px;
+    font-family: Helvetica, arial, sans-serif;
     position: relative;
-    background-color: #000; /* необязательно, можно убрать */
+    width: 100%;
+
+    -webkit-tap-highlight-color: transparent;
 }
 
-/* Убедись, что canvas внутри вписывается в div */
 #application-canvas {
-    width: 100% !important;
-    height: 100% !important;
     display: block;
-    margin: 0 auto;
-    background-color: transparent;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+#application-canvas.fill-mode-NONE {
+    margin: auto;
+}
+#application-canvas.fill-mode-KEEP_ASPECT {
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+#application-canvas.fill-mode-FILL_WINDOW {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+canvas:focus {
+    outline: none;
 }

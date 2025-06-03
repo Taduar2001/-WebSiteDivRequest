@@ -1,9 +1,11 @@
 pc.script.createLoadingScreen(function (app) {
+    var appWrapper = document.getElementById('playcanvas-wrapper');
+
     var showSplash = function () {
         // splash wrapper
         var wrapper = document.createElement('div');
         wrapper.id = 'application-splash-wrapper';
-        document.body.appendChild(wrapper);
+        appWrapper.appendChild(wrapper);
 
         // splash
         var splash = document.createElement('div');

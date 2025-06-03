@@ -1,21 +1,21 @@
-window.ASSET_PREFIX = "";
-window.SCRIPT_PREFIX = "";
-window.SCENE_PATH = "2253476.json";
-window.CONTEXT_OPTIONS = {
+ASSET_PREFIX = "";
+SCRIPT_PREFIX = "";
+SCENE_PATH = "484733.json";
+CONTEXT_OPTIONS = {
     'antialias': true,
     'alpha': false,
     'preserveDrawingBuffer': false,
-    'deviceTypes': [`webgl2`, `webgl1`],
-    'powerPreference': "high-performance"
+    'preferWebGl2': true,
+    'powerPreference': "default"
 };
-window.SCRIPTS = [  ];
-window.CONFIG_FILENAME = "config.json";
-window.INPUT_SETTINGS = {
+SCRIPTS = [ 6079415, 6079416, 6079417, 6079519 ];
+CONFIG_FILENAME = "config.json";
+INPUT_SETTINGS = {
     useKeyboard: true,
     useMouse: true,
     useGamepads: false,
     useTouch: true
 };
 pc.script.legacy = false;
-window.PRELOAD_MODULES = [
+PRELOAD_MODULES = [
 ];
