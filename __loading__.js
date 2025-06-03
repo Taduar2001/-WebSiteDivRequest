@@ -41,15 +41,14 @@ pc.script.createLoadingScreen(function (app) {
             '    background-color: #ffffff;',
             '}',
             '#application-splash-wrapper {',
-            '    position: absolute;', // was 'fixed'
+            '    position: absolute;', // вместо fixed
             '    top: 0; left: 0;',
             '    width: 100%; height: 100%;',
             '    display: flex; align-items: center; justify-content: center;',
             '    background-color: #ffffff;',
             '}',
             '#application-splash {',
-            '    width: 50vw; height: 50vw;',
-            '    max-width: 600px; max-height: 600px;',
+            '    width: 100%; height: 100%;',
             '    position: relative;',
             '}',
             '.rotating-container {',
