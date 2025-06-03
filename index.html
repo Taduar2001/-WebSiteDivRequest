@@ -18,4 +18,13 @@
         <script src="__loading__.js"></script>
     </div>
 </body>
+<script>
+    window.addEventListener("load", () => {
+        const canvas = document.getElementById("application-canvas");
+        if (canvas) {
+            canvas.style.width = "100%";
+            canvas.style.height = "100%";
+        }
+    });
+</script>
 </html>
