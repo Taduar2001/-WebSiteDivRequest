@@ -1,62 +1,21 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PlayCanvas Игра 200x200</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no' />
+    <meta charset='utf-8'>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="manifest" href="manifest.json">
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #222;
-            color: white;
-        }
-
-        button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-    </style>
-
+    <title>TestRequest</title>
     <script src="playcanvas-stable.min.js"></script>
     <script src="engine-patch.js"></script>
     <script src="__settings__.js"></script>
 </head>
 <body>
-
-    <div id="playcanvas-wrapper" style="width:300px; height:300px; position: relative;">
+    <div id="playcanvas-wrapper">
+        <!-- Игра загрузится в canvas, который PlayCanvas создаёт сам -->
         <script src="__modules__.js?v=1.12"></script>
         <script src="__start__.js"></script>
         <script src="__loading__.js"></script>
     </div>
-
-    <button id="sendData">Отправить данные</button>
-
-    <script>document.getElementById("sendData").addEventListener("click", function () {
-            if (typeof window.sendCustomData === 'function') {
-                window.sendCustomData({
-                    action: "updateScore",
-                    value: 150,
-                    name: "Alex"
-                });
-            } else {
-                console.warn("Функция sendCustomData не определена в игре.");
-            }
-        });
-
-        window.addEventListener('message', function (event) {
-            const data = event.data;
-            if (data.action === 'gameOver') {
-                console.log('Игра завершена. Счёт:', data.score);
-            }
-        });</script>
 </body>
 </html>
