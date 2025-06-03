@@ -41,9 +41,9 @@ pc.script.createLoadingScreen(function (app) {
             '    background-color: #ffffff;',
             '}',
             '#application-splash-wrapper {',
-            '    position: fixed;',
+            '    position: absolute;', // was 'fixed'
             '    top: 0; left: 0;',
-            '    width: 100vw; height: 100vh;',
+            '    width: 100%; height: 100%;',
             '    display: flex; align-items: center; justify-content: center;',
             '    background-color: #ffffff;',
             '}',
