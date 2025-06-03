@@ -5,16 +5,50 @@
     <meta charset='utf-8'>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="manifest" href="manifest.json">
-    <style></style>
     <title>Starter Kit: Model Viewer</title>
     <script src="playcanvas-stable.min.js"></script>
     <script src="engine-patch.js"></script>
     <script src="__settings__.js"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* убирает прокрутку */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #f0f0f0; /* можно заменить на нужный фон */
+        }
+
+        #playcanvas-wrapper {
+            width: 500px;
+            height: 500px;
+            background: #ccc; /* для наглядности, можно убрать */
+            position: relative;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+            .button-container button {
+                padding: 10px 20px;
+                font-size: 16px;
+                margin: 0 10px;
+            }
+    </style>
 </head>
 <body>
-    <div id="playcanvas-wrapper" style="width:500px; height:500px; position: relative;">
+    <div id="playcanvas-wrapper">
         <script src="__start__.js"></script>
         <script src="__loading__.js"></script>
+    </div>
+
+    <div class="button-container">
+        <button>Кнопка 1</button>
+        <button>Кнопка 2</button>
     </div>
 </body>
 </html>
